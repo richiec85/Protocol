@@ -1,0 +1,135 @@
+:root {
+    --accent: #00d4ff;
+    --accent2: #7fff6b;
+    --accent3: #ff6b35;
+    --accent4: #c77dff;
+    --accent5: #ffd166;
+    --accent6: #ff6b9d;
+
+    --bg: #080c12;
+    --surface: rgba(255, 255, 255, 0.03);
+    --surface2: rgba(255, 255, 255, 0.05);
+
+    --border: rgba(255, 255, 255, 0.07);
+    --text: #e8f4f8;
+    --muted: rgba(255, 255, 255, 0.4);
+    --faint: rgba(255, 255, 255, 0.07);
+
+    --danger: #ff5050;
+    --font: 'DM Mono', 'Courier New', monospace;
+}
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font);
+    min-height: 100vh;
+    -webkit-tap-highlight-color: transparent;
+}
+
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 212, 255, 0.2);
+    border-radius: 3px;
+}
+
+input, select, textarea, button {
+    font-family: var(--font);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: rgba(0, 212, 255, 0.4) !important;
+}
+
+button {
+    cursor: pointer;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-up {
+    animation: fadeUp 0.25s ease both;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 4px 24px rgba(0, 212, 255, 0.4);
+    }
+    50% {
+        box-shadow: 0 4px 36px rgba(0, 212, 255, 0.7);
+    }
+}
+
+.fab {
+    animation: pulse 2.5s ease infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.spin {
+    display: inline-block;
+    animation: spin 0.8s linear infinite;
+}
+
+.chart-tip {
+    position: absolute;
+    background: #0d1520;
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 6px;
+    padding: 6px 10px;
+    font-size: 11px;
+    pointer-events: none;
+    z-index: 10;
+    white-space: nowrap;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-muted {
+    color: var(--muted);
+}
+
+.text-danger {
+    color: var(--danger);
+}
+
+.text-success {
+    color: var(--accent2);
+}
+
+.text-warning {
+    color: var(--accent5);
+}
+
+@media (max-width: 768px) {
+    .container {
+        padding: 0 12px;
+    }
+}
