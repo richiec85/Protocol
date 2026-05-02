@@ -1,22 +1,11 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+// vite.config.ts
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-    plugins: [react()],
-                            resolve: {
-                                alias: {
-                                    '@': path.resolve(__dirname, './src'),
-                                },
-                            },
-                            test: {
-                                globals: true,
-                            environment: 'jsdom',
-                            setupFiles: './src/test/setup.ts',
-                            css: true,
-                            },
-                            build: {
-                                outDir: 'dist',
-                            assetsDir: 'assets',
-                            },
-})
+  plugins: [react()],
+  base: '/Protocol/',  // Change this to your repo name
+  build: {
+    outDir: 'dist',
+  },
+});
